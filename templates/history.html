@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Trading History
+{% endblock %}
+
+{% block main %}
+
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      {# <th scope="col">#</th> #}
+      <th scope="col">Symbol</th>
+      <th scope="col">Share Quantity</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for dat in data %}
+    <tr>
+      {# <th scope="row"></th> #}
+      <td>{{dat["symbol"]}}</td>
+      <td>{{dat["shares"]}}</td>
+      <td>{{dat["price"] | usd}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+
+{% endblock %}
