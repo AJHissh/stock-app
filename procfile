@@ -1,1 +1,0 @@
-web: gunicorn flask-stocks-app.wsgi
